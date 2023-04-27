@@ -1,15 +1,14 @@
 import * as React from 'react'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import { graphql } from 'gatsby'
 
-const AboutPage = () => {
+const pageTemplate = props => {
+
+  const data = {
+    nodeFood: props.pageContext.data
+  }
   return (
-    <Layout pageTitle="About Me">
-      <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
-    </Layout>
+    <h2>{DataTransfer.nodeFood?.title}</h2>
   )
 }
 
-export const Head = () => <Seo title="About Me" />
-
-export default AboutPage
+export default pageTemplate
